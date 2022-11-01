@@ -5,8 +5,7 @@ import hacs.UserInfoItem.USER_TYPE;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.io.BufferedReader;
-import java.io.FileReader;
+import java.io.*;
 
 /**
  * Title: HACS Description: Copyright: Copyright (c) 2002 Company: msu
@@ -53,7 +52,11 @@ public class Login extends JDialog {
         loginButton.setBounds(new Rectangle(31, 212, 85, 28));
         loginButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                loginButtonActionPerformed(e);
+                try {
+                    loginButtonActionPerformed(e);
+                } catch (IOException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
         });
         buttonExit.setText("Exit");
@@ -82,35 +85,34 @@ public class Login extends JDialog {
         buttonGroup1.add(instructorRadio);
     }
 
-    void loginButtonActionPerformed(ActionEvent e) {
+    void loginButtonActionPerformed(ActionEvent e) throws IOException {
         BufferedReader file;
         mBExit = false;
         System.out.println("login clicked");
-        try {
-            if (studentRadio.isSelected() == true)//// student
-            {
-                userType = USER_TYPE.Student; /// 0 for student
-                file = new BufferedReader(new FileReader("StuInfo.txt"));
-            } else// instructor
-            {
-                userType = USER_TYPE.Instructor; // 1 for instructor
-                file = new BufferedReader(new FileReader("InsInfor.txt"));
+        File fl = new File("./TextFiles/StudentInfo.txt");
+        if (studentRadio.isSelected() == true)//// student
+        {
+            userType = USER_TYPE.Student; /// 0 for student
+        } else// instructor
+        {
+            fl = new File("./TextFiles/InstructorInfo.txt");
+            userType = USER_TYPE.Instructor; // 1 for instructor
+        }
+        file = new BufferedReader(new FileReader(fl));
+        userBox = userNameText.getText();
+        String passwordBox = new String(passwordText.getPassword());
+        String loginName = null;
+        String aline, userName = "", password = "";
+        while ((aline = file.readLine()) != null) {
+            userName = getUserName(aline);
+            password = getPassword(aline);
+            if (userName.compareTo(userBox) == 0 && password.compareTo(passwordBox) == 0) {
+                loginName = userName;
+                break;
             }
-            userBox = userNameText.getText();
-            String passwordBox = new String(passwordText.getPassword());
-            String loginName = null;
-            String aline = null, userName = null, password = null;
-            while ((aline = file.readLine()) != null) {
-                userName = getUserName(aline);
-                password = getPassword(aline);
-                if (userName.compareTo(userBox) == 0 && password.compareTo(passwordBox) == 0)
-                    loginName = userName;
-            }
-            if (loginName != null) {
-                this.hide();
-            }
-        } catch (Exception ee) {
-            ;
+        }
+        if (loginName != null) {
+            this.setVisible(false);
         }
 
     }

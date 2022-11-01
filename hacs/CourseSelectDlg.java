@@ -82,7 +82,7 @@ public class CourseSelectDlg extends JDialog {
 		while ((theCourse = (Course) theIterator.next()) != null) {
 			courseNameComboBox.addItem(theCourse);
 		}
-		show();
+		setVisible(true);
 		return selectedCourse;
 	}
 
@@ -92,7 +92,7 @@ public class CourseSelectDlg extends JDialog {
 			nCourseLevel = 0;
 		else
 			nCourseLevel = 1;
-		hide();
+		setVisible(false);
 	}
 
 	public boolean isLogout() {
@@ -101,6 +101,6 @@ public class CourseSelectDlg extends JDialog {
 
 	void buttonLogoutActionPerformed(ActionEvent e) {
 		mBLogout = true;
-		hide();
+		setVisible(false);
 	}
 }

@@ -111,7 +111,7 @@ public class Facade {
 	 */
 	void createCourseList() {
 		theCourseList = new ClassCourseList();
-		theCourseList.initializeFromFile("CourseInfo.txt");
+		theCourseList.initializeFromFile("./TextFiles/CourseInfo.txt");
 	}
 
 	/*
@@ -122,13 +122,13 @@ public class Facade {
 	void attachCourseToUser() {
 		BufferedReader file;
 		try {
-			file = new BufferedReader(new FileReader("UserCourse.txt"));
+			file = new BufferedReader(new FileReader("./TextFiles/UserCourse.txt"));
 			String aLine, stringUserName, stringCourseName;
 			while ((aLine = file.readLine()) != null) // not the EOF
 			{
 				stringUserName = getUserName(aLine);
 				stringCourseName = getCourseName(aLine);
-				if (stringUserName.compareTo(thePerson.userName) == 0) /// the UserName mateches
+				if (stringUserName.compareTo(thePerson.userName) == 0) /// the UserName matches
 				{
 					theSelecteCourse = findCourseByCourseName(stringCourseName);
 					if (theSelecteCourse != null) /// Find the Course in the CourseList--->attach
@@ -155,7 +155,7 @@ public class Facade {
 	 */
 	private String getCourseName(String aline) {
 		int index = aline.lastIndexOf(':');
-		return aline.substring(index + 1, aline.length());
+		return aline.substring(index + 1);
 	}
 
 	/*

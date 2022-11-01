@@ -59,6 +59,6 @@ public class Reminder extends JDialog {
     }
 
     void buttonOkActionPerformed(ActionEvent e) {
-        hide();
+        setVisible(false);
     }
 }
