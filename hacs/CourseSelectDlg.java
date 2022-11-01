@@ -13,14 +13,14 @@ import java.awt.event.ActionEvent;
 
 public class CourseSelectDlg extends JDialog {
 	ClassCourseList theCourseList;
-	Course SelectedCourse;
+	Course selectedCourse;
 	int nCourseLevel = 0;
-	boolean m_bLogout = false;
-	JComboBox CourseNameCom = new JComboBox();
-	JRadioButton HighLevelRadio = new JRadioButton();
-	JRadioButton LowLevelRadio = new JRadioButton();
+	boolean mBLogout = false;
+	JComboBox courseNameComboBox = new JComboBox();
+	JRadioButton highLevelRadio = new JRadioButton();
+	JRadioButton lowLevelRadio = new JRadioButton();
 	JLabel jLabel1 = new JLabel();
-	JButton OKButton = new JButton();
+	JButton okButton = new JButton();
 	ButtonGroup buttonGroup1 = new ButtonGroup();
 	JButton buttonLogout = new JButton();
 
@@ -36,37 +36,37 @@ public class CourseSelectDlg extends JDialog {
 
 	private void jbInit() throws Exception {
 		this.getContentPane().setLayout(null);
-		CourseNameCom.setBounds(new Rectangle(155, 41, 203, 22));
-		HighLevelRadio.setText("HighLevel");
-		HighLevelRadio.setBounds(new Rectangle(50, 87, 103, 26));
-		LowLevelRadio.setToolTipText("");
-		LowLevelRadio.setSelected(true);
-		LowLevelRadio.setText("LowLevel");
-		LowLevelRadio.setBounds(new Rectangle(236, 88, 103, 26));
+		courseNameComboBox.setBounds(new Rectangle(155, 41, 203, 22));
+		highLevelRadio.setText("HighLevel");
+		highLevelRadio.setBounds(new Rectangle(50, 87, 103, 26));
+		lowLevelRadio.setToolTipText("");
+		lowLevelRadio.setSelected(true);
+		lowLevelRadio.setText("LowLevel");
+		lowLevelRadio.setBounds(new Rectangle(236, 88, 103, 26));
 		jLabel1.setText("CourseName");
 		jLabel1.setBounds(new Rectangle(39, 44, 85, 18));
-		OKButton.setText("OK");
-		OKButton.setBounds(new Rectangle(78, 139, 79, 29));
-		OKButton.addActionListener(new java.awt.event.ActionListener() {
+		okButton.setText("OK");
+		okButton.setBounds(new Rectangle(78, 139, 79, 29));
+		okButton.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				OKButton_actionPerformed(e);
+				okButtonActionPerformed(e);
 			}
 		});
 		buttonLogout.setText("Logout");
 		buttonLogout.setBounds(new Rectangle(224, 140, 73, 31));
 		buttonLogout.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				buttonLogout_actionPerformed(e);
+				buttonLogoutActionPerformed(e);
 			}
 		});
-		this.getContentPane().add(CourseNameCom, null);
+		this.getContentPane().add(courseNameComboBox, null);
 		this.getContentPane().add(jLabel1, null);
-		this.getContentPane().add(HighLevelRadio, null);
-		this.getContentPane().add(LowLevelRadio, null);
-		this.getContentPane().add(OKButton, null);
+		this.getContentPane().add(highLevelRadio, null);
+		this.getContentPane().add(lowLevelRadio, null);
+		this.getContentPane().add(okButton, null);
 		this.getContentPane().add(buttonLogout, null);
-		buttonGroup1.add(HighLevelRadio);
-		buttonGroup1.add(LowLevelRadio);
+		buttonGroup1.add(highLevelRadio);
+		buttonGroup1.add(lowLevelRadio);
 	}
 
 	/*
@@ -74,21 +74,21 @@ public class CourseSelectDlg extends JDialog {
 	 * return the pointer pointing to the Course object return the Course Type
 	 */
 
-	public Course ShowDlg(ClassCourseList courseList) {
+	public Course showDlg(ClassCourseList courseList) {
 
 		theCourseList = courseList;
 		CourseIterator theIterator = new CourseIterator(theCourseList);
 		Course theCourse;
 		while ((theCourse = (Course) theIterator.next()) != null) {
-			CourseNameCom.addItem(theCourse);
+			courseNameComboBox.addItem(theCourse);
 		}
 		show();
-		return SelectedCourse;
+		return selectedCourse;
 	}
 
-	void OKButton_actionPerformed(ActionEvent e) {
-		SelectedCourse = (Course) CourseNameCom.getSelectedItem();
-		if (HighLevelRadio.isSelected())
+	void okButtonActionPerformed(ActionEvent e) {
+		selectedCourse = (Course) courseNameComboBox.getSelectedItem();
+		if (highLevelRadio.isSelected())
 			nCourseLevel = 0;
 		else
 			nCourseLevel = 1;
@@ -96,11 +96,11 @@ public class CourseSelectDlg extends JDialog {
 	}
 
 	public boolean isLogout() {
-		return m_bLogout;
+		return mBLogout;
 	}
 
-	void buttonLogout_actionPerformed(ActionEvent e) {
-		m_bLogout = true;
+	void buttonLogoutActionPerformed(ActionEvent e) {
+		mBLogout = true;
 		hide();
 	}
 }

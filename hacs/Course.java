@@ -17,24 +17,24 @@ import java.util.ArrayList;
 
 public class Course {
     public ArrayList<Assignment> assignmentList = new ArrayList<Assignment>();
-    String CourseName;
-    int NumOfAss;
-    int CourseLevel;
+    String courseName;
+    int numberOfAssignment;
+    int courseLevel;
 
-    public Course(String strCourse, int theLevel) {
-        this.CourseName = strCourse;
+    public Course(String stringCourse, int theLevel) {
+        this.courseName = stringCourse;
 
-        this.CourseLevel = theLevel;
+        this.courseLevel = theLevel;
         // this.AssList = NULL;
-        this.NumOfAss = 0;
+        this.numberOfAssignment = 0;
     }
 
-    public void AddAssignment(Assignment newAss) {
+    public void addAssignment(Assignment newAss) {
         assignmentList.add(newAss);
     }
 
     public String toString() {
-        return CourseName;
+        return courseName;
     }
 
     void accept(NodeVisitor visitor) {

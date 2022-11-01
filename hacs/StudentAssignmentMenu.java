@@ -68,14 +68,14 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 		bSubmit.setBounds(new Rectangle(476, 124, 79, 29));
 		bSubmit.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				bSubmit_actionPerformed(e);
+				bSubmitActionPerformed(e);
 			}
 		});
 		bCancel.setText("Cancel");
 		bCancel.setBounds(new Rectangle(475, 164, 79, 29));
 		bCancel.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				bCancel_actionPerformed(e);
+				bCancelActionPerformed(e);
 			}
 		});
 		this.getContentPane().add(jLabel1, null);
@@ -96,42 +96,42 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 	 * check if the student has already had a solution or not. if not , create a new
 	 * solution for the student. after showing the solution attatch the soluiton;
 	 */
-	public void ShowMenu(Assignment assignment, Person thePerson) {
+	public void showMenu(Assignment assignment, Person thePerson) {
 		theAssignment = assignment;
-		SolutionIterator theIter = theAssignment.GetSolutionIterator();
-		theSolution = (Solution) theIter.next(thePerson.UserName);
+		SolutionIterator theIter = theAssignment.getSolutionIterator();
+		theSolution = (Solution) theIter.next(thePerson.userName);
 		if (theSolution == null) {
 			tbSolution.setText("");
 			lGrade.setText("-1");
 		} else {
-			tbSolution.setText(theSolution.SolutionFileName);
+			tbSolution.setText(theSolution.solutionFileName);
 			lGrade.setText(theSolution.getGradeString());
 
 		}
 
-		lAssignmentName.setText(theAssignment.AssName);
-		lDueDate.setText(theAssignment.DueDate.toString());
-		lSuggestedSolution.setText(theAssignment.SuggestSolution.SolutionFileName);
+		lAssignmentName.setText(theAssignment.assignmentName);
+		lDueDate.setText(theAssignment.dueDate.toString());
+		lSuggestedSolution.setText(theAssignment.suggestSolution.solutionFileName);
 
 		show();
 
 		if (boolSubmit == true) {
 			if (theSolution == null) {
 				theSolution = new Solution();
-				theAssignment.AddSolution(theSolution);
+				theAssignment.addSolution(theSolution);
 			}
-			theSolution.theAuthor = thePerson.UserName;
-			theSolution.SolutionFileName = tbSolution.getText();
+			theSolution.theAuthor = thePerson.userName;
+			theSolution.solutionFileName = tbSolution.getText();
 			theSolution.theSubmitData = new Date();
 		}
 	}
 
-	void bSubmit_actionPerformed(ActionEvent e) {
+	void bSubmitActionPerformed(ActionEvent e) {
 		boolSubmit = true;
 		hide();
 	}
 
-	void bCancel_actionPerformed(ActionEvent e) {
+	void bCancelActionPerformed(ActionEvent e) {
 		boolSubmit = false;
 		hide();
 	}

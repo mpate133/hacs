@@ -12,7 +12,7 @@ abstract public class NodeVisitor {
     public NodeVisitor() {
     }
 
-    public NodeVisitor(Object visitee) {
+    public NodeVisitor(Object visitor) {
     }
 
     abstract public void visitFacade(Facade facade);

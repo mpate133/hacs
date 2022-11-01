@@ -37,7 +37,7 @@ public class SolutionGradingDlg extends JDialog {
         buttonOK.setBounds(new Rectangle(217, 67, 79, 29));
         buttonOK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                buttonOK_actionPerformed(e);
+                buttonOkActionPerformed(e);
             }
         });
         labelSolutionFileName.setBounds(new Rectangle(212, 34, 163, 18));
@@ -50,11 +50,11 @@ public class SolutionGradingDlg extends JDialog {
     void show(Solution solution) {
         theSolution = solution;
         tfGrad.setText("" + theSolution.getGradeInt());
-        labelSolutionFileName.setText(theSolution.SolutionFileName);
+        labelSolutionFileName.setText(theSolution.solutionFileName);
         show();
     }
 
-    void buttonOK_actionPerformed(ActionEvent e) {
+    void buttonOkActionPerformed(ActionEvent e) {
         theSolution.theGrade = Integer.parseInt(tfGrad.getText());
         hide();
     }
