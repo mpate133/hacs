@@ -96,6 +96,7 @@ class AssignmentTest {
 
     @org.junit.jupiter.api.Test
     void accept() {
+        Assertions.assertEquals(false, assignmentForTest.returnAccept());
         assignmentForTest.accept(new ReminderVisitor());
         Assertions.assertEquals(true, assignmentForTest.returnAccept());
     }

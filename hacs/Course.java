@@ -21,6 +21,8 @@ public class Course {
     int numberOfAssignment;
     int courseLevel;
 
+    public boolean isEnteredAccept = false;
+
     public Course(String stringCourse, int theLevel) {
         this.courseName = stringCourse;
 
@@ -39,6 +41,11 @@ public class Course {
 
     void accept(NodeVisitor visitor) {
         visitor.visitCourse(this);
+        isEnteredAccept = true;
+    }
+
+    public boolean returnAccept(){
+        return isEnteredAccept;
     }
 
 }
