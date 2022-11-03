@@ -106,6 +106,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
         try {
             theAssignment.dueDate = tempDateFormat.parse(tbDueDate.getText());
         } catch (Exception ee) {
+            System.out.println(ee);
         }
 
         theAssignment.suggestSolution.solutionFileName = tbSuggestedSolution.getText();
@@ -114,8 +115,9 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 
     void buttonGradeActionPerformed(ActionEvent e) {
         Solution theSolution = (Solution) combSolutionList.getSelectedItem();
-        if (theSolution == null)
+        if (theSolution == null) {
             return;
+        }
         SolutionGradingDlg dlg = new SolutionGradingDlg();
         dlg.show(theSolution);
         refreshSolutionList();

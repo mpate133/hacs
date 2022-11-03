@@ -106,7 +106,6 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 		} else {
 			tbSolution.setText(theSolution.solutionFileName);
 			lGrade.setText(theSolution.getGradeString());
-
 		}
 
 		lAssignmentName.setText(theAssignment.assignmentName);

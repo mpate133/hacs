@@ -25,19 +25,22 @@ public class Hacs {
         while (true) {
             boolean bExit = false;
             bExit = theFacade.login(userInfoItem);
-            if (bExit)
+            if (bExit) {
                 break;
+            }
             // userInfoItem.stringUserName = "Inst1";
             // userInfoItem.userType = 1;
             theFacade.createUser(userInfoItem);
             theFacade.attachCourseToUser();
-            if (userInfoItem.userType == 0) // if is a student remind him of the due date
+            if (userInfoItem.userType == 0) { // if is a student remind him of the due date
                 theFacade.remind();
+            }
             boolean bLogout = false;
             while (!bLogout) {
                 bLogout = theFacade.selectCourse();
-                if (bLogout)
+                if (bLogout) {
                     break;
+                }
                 bLogout = theFacade.courseOperation();
             }
         }

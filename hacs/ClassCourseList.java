@@ -36,8 +36,9 @@ public class ClassCourseList extends ArrayList<Course> {
         int nCourseCount = size();
         for (int i = 0; i < nCourseCount; i++) {
             Course theCourse = (Course) get(i);
-            if (theCourse.courseName.compareTo(courseName) == 0)
+            if (theCourse.courseName.compareTo(courseName) == 0) {
                 return theCourse;
+            }
         }
         return null;
     }

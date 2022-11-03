@@ -23,10 +23,12 @@ public class ListIterator implements Iterator<Object> {
     }
 
     public boolean hasNext() {
-        if (currentNumber >= theList.size() - 1)
+        if (currentNumber >= theList.size() - 1) {
             return false;
-        else
+        }
+        else {
             return true;
+        }
     }
 
     public Object next() {

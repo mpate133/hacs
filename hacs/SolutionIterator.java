@@ -33,10 +33,12 @@ public class SolutionIterator implements Iterator {
 
     public boolean hasNext() {
         /** @todo: Implement this java.util.Iterator method */
-        if (currentSolutionNumber >= solutionlist.size() - 1)
+        if (currentSolutionNumber >= solutionlist.size() - 1) {
             return false;
-        else
+        }
+        else {
             return true;
+        }
         // throw new java.lang.UnsupportedOperationException("Method hasNext() not yet
         // implemented.");
     }

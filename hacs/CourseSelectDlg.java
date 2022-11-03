@@ -88,10 +88,12 @@ public class CourseSelectDlg extends JDialog {
 
 	void okButtonActionPerformed(ActionEvent e) {
 		selectedCourse = (Course) courseNameComboBox.getSelectedItem();
-		if (highLevelRadio.isSelected())
+		if (highLevelRadio.isSelected()) {
 			nCourseLevel = 0;
-		else
+		}
+		else {
 			nCourseLevel = 1;
+		}
 		setVisible(false);
 	}
 

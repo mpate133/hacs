@@ -27,19 +27,23 @@ public class Solution {
     @Override
     public String toString() {
         String string = theAuthor + "  " + solutionFileName + " Grade=" + getGradeInt() + "  ";
-        if (isReported())
+        if (isReported()) {
             string += "reported";
-        else
+        }
+        else {
             string += "not reported";
+        }
 
         return (string);
     }
 
     String getGradeString() {
-        if (isReported())
+        if (isReported()) {
             return "" + theGrade;
-        else
+        }
+        else {
             return "-1";
+        }
     }
 
     int getGradeInt() {
