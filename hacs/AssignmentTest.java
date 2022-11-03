@@ -1,5 +1,6 @@
 package hacs;
 
+import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 
 import java.text.DateFormat;
@@ -74,17 +75,28 @@ class AssignmentTest {
 
     @org.junit.jupiter.api.Test
     void getSolutionIterator() {
+        SolutionIterator iter = assignmentForTest.getSolutionIterator();
+        Assertions.assertEquals(true, iter.solutionlist.isEmpty());
     }
 
     @org.junit.jupiter.api.Test
     void testToString() {
+        String testString = "String for unit test";
+        assignmentForTest.assignmentName = testString;
+        Assertions.assertEquals(testString, assignmentForTest.toString());
     }
 
     @org.junit.jupiter.api.Test
     void getDueDateString() {
+        Date due = new Date();
+        assignmentForTest.setDueDate(due);
+        DateFormat dF = DateFormat.getDateInstance(DateFormat.SHORT);
+        Assertions.assertEquals(dF.format(due), assignmentForTest.getDueDateString());
     }
 
     @org.junit.jupiter.api.Test
     void accept() {
+        assignmentForTest.accept(new ReminderVisitor());
+        Assertions.assertEquals(true, assignmentForTest.returnAccept());
     }
 }

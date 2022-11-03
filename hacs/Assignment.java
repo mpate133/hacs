@@ -21,6 +21,7 @@ public class Assignment {
     protected String assignmentSpecification;
     protected SolutionList theSolutionList = new SolutionList();
     protected Solution suggestSolution = new Solution();
+    public boolean isEnteredAccept = false;
 
     public Assignment() {
     }
@@ -87,5 +88,10 @@ public class Assignment {
 
     public void accept(NodeVisitor visitor) {
         visitor.visitAssignment(this);
+        isEnteredAccept = true;
+    }
+
+    public boolean returnAccept(){
+        return isEnteredAccept;
     }
 }
