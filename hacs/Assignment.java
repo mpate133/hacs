@@ -55,14 +55,15 @@ public class Assignment {
     public void submitSolution() {
     }
 
-    public void getSolutionList() {
+    public SolutionList getSolutionList() {
+        return theSolutionList;
     }
 
     /*
      * return the solution of the give name
      */
     public Solution getSolution(String studentname) {
-        SolutionIterator Iterator = (SolutionIterator) theSolutionList.iterator();
+        SolutionIterator Iterator = new SolutionIterator(theSolutionList);
         return (Solution) Iterator.next(studentname);
     }
 
