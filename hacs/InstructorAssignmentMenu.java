@@ -90,14 +90,14 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 
     public void showMenu(Assignment assignment, Person person) {
         theAssignment = assignment;
-        Solution theSolution;
+        // Solution theSolution; ** not in use
         tbAssignmentName.setText(theAssignment.assignmentName);
 
         DateFormat theDateFormat = DateFormat.getDateInstance(DateFormat.SHORT);
         tbDueDate.setText(theDateFormat.format(theAssignment.dueDate));
         tbSuggestedSolution.setText(theAssignment.suggestSolution.solutionFileName);
         refreshSolutionList();
-        show();
+        setVisible(true);
     }
 
     void buttonCloseActionPerformed(ActionEvent e) {
@@ -109,7 +109,7 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
         }
 
         theAssignment.suggestSolution.solutionFileName = tbSuggestedSolution.getText();
-        hide();
+        setVisible(false);
     }
 
     void buttonGradeActionPerformed(ActionEvent e) {

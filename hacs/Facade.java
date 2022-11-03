@@ -26,7 +26,7 @@ public class Facade {
 	static public boolean login(UserInfoItem userInfoItem) {
 		Login login = new Login();
 		login.setModal(true);
-		login.show();
+		login.setVisible(true);
 		userInfoItem.stringUserName = login.getUserName();
 		userInfoItem.userType = login.getUserType();
 		return login.isExit();

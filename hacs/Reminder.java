@@ -52,10 +52,10 @@ public class Reminder extends JDialog {
     }
 
     void showReminder(ClassCourseList courseList) {
-        Assignment assignment;
+        // Assignment assignment;  *not in use
         ReminderVisitor visitor = new ReminderVisitor(this);
         visitor.visitFacade(Hacs.theFacade);
-        show();
+        setVisible(true);
     }
 
     void buttonOkActionPerformed(ActionEvent e) {

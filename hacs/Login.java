@@ -149,6 +149,6 @@ public class Login extends JDialog {
 
     void buttonExitActionPerformed(ActionEvent e) {
         mBExit = true;
-        hide();
+        setVisible(false);
     }
 }

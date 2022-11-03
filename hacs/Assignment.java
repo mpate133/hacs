@@ -66,7 +66,7 @@ public class Assignment {
         return (Solution) Iterator.next(studentname);
     }
 
-    public Solution getSugSolution() {
+    public Solution getSuggestSolution() {
         return suggestSolution;
     }
 

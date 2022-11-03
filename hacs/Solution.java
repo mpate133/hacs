@@ -26,8 +26,7 @@ public class Solution {
 
     @Override
     public String toString() {
-        String string;
-        string = theAuthor + "  " + solutionFileName + " Grade=" + getGradeInt() + "  ";
+        String string = theAuthor + "  " + solutionFileName + " Grade=" + getGradeInt() + "  ";
         if (isReported())
             string += "reported";
         else
