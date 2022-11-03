@@ -31,7 +31,7 @@ public class Hacs {
             // userInfoItem.userType = 1;
             theFacade.createUser(userInfoItem);
             theFacade.attachCourseToUser();
-            if (userInfoItem.userType == UserInfoItem.USER_TYPE.Student) // if is a student remind him of the due date
+            if (userInfoItem.userType == 0) // if is a student remind him of the due date
                 theFacade.remind();
             boolean bLogout = false;
             while (!bLogout) {

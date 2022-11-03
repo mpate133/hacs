@@ -1,7 +1,5 @@
 package hacs;
 
-import hacs.UserInfoItem.USER_TYPE;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -31,7 +29,7 @@ public class Login extends JDialog {
     ButtonGroup buttonGroup1 = new ButtonGroup();
     ////// Attributes Added By me
     private String userBox = null;
-    private USER_TYPE userType = USER_TYPE.Student; // default to Student
+    private int userType = 0; // default to Student
 
     public Login() {
         try {
@@ -92,11 +90,11 @@ public class Login extends JDialog {
         File fl = new File("./TextFiles/StudentInfo.txt");
         if (studentRadio.isSelected() == true)//// student
         {
-            userType = USER_TYPE.Student; /// 0 for student
+            userType = 0; /// 0 for student
         } else// instructor
         {
             fl = new File("./TextFiles/InstructorInfo.txt");
-            userType = USER_TYPE.Instructor; // 1 for instructor
+            userType = 1; // 1 for instructor
         }
         file = new BufferedReader(new FileReader(fl));
         userBox = userNameText.getText();
@@ -139,7 +137,7 @@ public class Login extends JDialog {
     }
 
     /* after login get the userType of the login interface */
-    public USER_TYPE getUserType() {
+    public int getUserType() {
         return userType;
     }
 

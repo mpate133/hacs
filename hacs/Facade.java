@@ -98,7 +98,7 @@ public class Facade {
 	}
 
 	void createUser(UserInfoItem userInfoItem) {
-		if (userInfoItem.userType == UserInfoItem.USER_TYPE.Student) {
+		if (userInfoItem.userType == 0) {
 			thePerson = new Student();
 		} else {
 			thePerson = new Instructor();
