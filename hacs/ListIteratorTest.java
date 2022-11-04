@@ -1,15 +1,15 @@
+/**
+ * @author Manan Patel
+ * @version 1.0
+ */
+
 package hacs;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
-import java.util.ListIterator;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class ListIteratorTest {
 

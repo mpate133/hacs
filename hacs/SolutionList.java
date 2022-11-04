@@ -10,6 +10,9 @@ import java.util.ArrayList;
  * @version 2.0
  * <p>
  * Update to Java 8.
+ *
+ * @author Manan Patel
+ * @version 3.0
  */
 
 public class SolutionList extends ArrayList<Solution> {

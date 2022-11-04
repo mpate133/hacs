@@ -10,6 +10,8 @@ import javax.swing.JDialog;
  *
  * @author Zhang ji Zhu Wei
  * @version 1.0
+ * @author Manan Patel
+ * @version 2.0
  */
 
 abstract public class AssignmentMenu extends JDialog {

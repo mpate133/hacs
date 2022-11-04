@@ -10,8 +10,10 @@ import java.util.Iterator;
  * @author Zhang ji Zhu Wei
  * @author mjfindler
  * @version 2.0
- * <p>
  * update to Java 8
+ *
+ * @author Manan Patel
+ * @version 3.0
  */
 
 /*

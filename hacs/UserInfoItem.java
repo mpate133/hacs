@@ -9,6 +9,9 @@ package hacs;
  * @version 2.0
  *
  * Update to Java 8
+ *
+ * @author Manan Patel
+ * @version 3.0
  */
 
 public class UserInfoItem {

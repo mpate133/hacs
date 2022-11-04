@@ -9,6 +9,9 @@ import java.util.Iterator;
  *
  * @author Ji Zhang, Wei Zhu
  * @version 1.0
+ *
+ * @author Manan Patel
+ * @version 2.0
  */
 
 abstract public class Person {

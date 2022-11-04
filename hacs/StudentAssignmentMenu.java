@@ -3,7 +3,6 @@ package hacs;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
-import java.io.*;
 import java.util.*;
 
 /**
@@ -11,6 +10,9 @@ import java.util.*;
  *
  * @author Zhang ji Zhu Wei
  * @version 1.0
+ *
+ * @author Manan Patel
+ * @version 2.0
  */
 
 public class StudentAssignmentMenu extends AssignmentMenu {

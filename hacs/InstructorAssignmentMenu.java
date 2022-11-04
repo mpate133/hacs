@@ -13,6 +13,9 @@ import java.text.DateFormat;
  *
  * @author Zhang ji Zhu Wei
  * @version 1.0
+ *
+ * @author Manan Patel
+ * @version 2.0
  */
 
 public class InstructorAssignmentMenu extends AssignmentMenu {

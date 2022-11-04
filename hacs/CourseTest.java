@@ -1,11 +1,12 @@
+/**
+ * @author Manan Patel
+ * @version 1.0
+ */
+
 package hacs;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.nio.channels.AsynchronousServerSocketChannel;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CourseTest {
 

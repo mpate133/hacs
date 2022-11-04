@@ -1,12 +1,14 @@
+/**
+ * @author Manan Patel
+ * @version 1.0
+ */
+
 package hacs;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
-
 import java.text.DateFormat;
 import java.util.Date;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class AssignmentTest {
 

@@ -7,6 +7,9 @@ package hacs;
  *
  * @author Ji Zhang, Wei Zhu
  * @version 1.0
+ *
+ * @author Manan Patel
+ * @version 2.0
  */
 
 public class Student extends Person {

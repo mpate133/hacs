@@ -1,10 +1,14 @@
+/**
+ * @author Manan Patel
+ * @version 1.0
+ */
+
 package hacs;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 class HacsTest {
 
     @Test

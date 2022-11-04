@@ -8,6 +8,9 @@ package hacs;
  * @version 2.0
  * <p>
  * Update to Java 8
+ *
+ * @author Manan Patel
+ * @version 3.0
  */
 
 public class Hacs {
@@ -44,6 +47,5 @@ public class Hacs {
                 bLogout = theFacade.courseOperation();
             }
         }
-//    System.out.println(userInfoItem.strUserName + userInfoItem.UserType );
     }
 }

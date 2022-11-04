@@ -1,3 +1,8 @@
+/**
+ * @author Manan Patel
+ * @version 1.0
+ */
+
 package hacs;
 
 import org.junit.jupiter.api.AfterEach;
@@ -5,7 +10,6 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class ClassCourseListTest {
 
@@ -29,6 +33,6 @@ class ClassCourseListTest {
     void findCourseByCourseName() {
         String course = "SER501";
         classCourseList.initializeFromFile("./TextFiles/CourseInfo.txt");
-        assertEquals(course, classCourseList.findCourseByCourseName((course)).toString());
+        Assertions.assertEquals(course, classCourseList.findCourseByCourseName((course)).toString());
     }
 }
