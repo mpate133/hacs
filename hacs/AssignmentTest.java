@@ -28,21 +28,31 @@ class AssignmentTest {
         Date due = new Date();
         assignmentForTest.setDueDate(due);
         DateFormat dF = DateFormat.getDateInstance(DateFormat.SHORT);
-        Assertions.assertEquals(dF.format(due), assignmentForTest.getDueDateString());
+        Assertions.assertEquals(
+            dF.format(due),
+            assignmentForTest.getDueDateString()
+        );
     }
 
     @org.junit.jupiter.api.Test
     void setAssignmentSpecification() {
         String specification = "Assignment Specification";
         assignmentForTest.setAssignmentSpecification(specification);
-        Assertions.assertEquals(specification, assignmentForTest.assignmentSpecification);
+        Assertions.assertEquals(
+            specification,
+            assignmentForTest.assignmentSpecification
+        );
     }
 
     @org.junit.jupiter.api.Test
     void isOverDue() {
-        assignmentForTest.setDueDate(new Date(System.currentTimeMillis()-24*60*60*1000));
+        assignmentForTest.setDueDate(
+            new Date(System.currentTimeMillis()-24*60*60*1000)
+        );
         Assertions.assertEquals(true, assignmentForTest.isOverDue());
-        assignmentForTest.setDueDate(new Date(System.currentTimeMillis()+24*60*60*1000));
+        assignmentForTest.setDueDate(
+            new Date(System.currentTimeMillis()+24*60*60*1000)
+        );
         Assertions.assertEquals(false, assignmentForTest.isOverDue());
     }
 
@@ -50,7 +60,10 @@ class AssignmentTest {
     void addSolution() {
         assignmentForTest.addSolution(solutionForTest);
         assignmentForTest.addSolution(solutionForTest);
-        Assertions.assertEquals(2, assignmentForTest.getSolutionList().size());
+        Assertions.assertEquals(
+            2,
+            assignmentForTest.getSolutionList().size()
+        );
     }
 
     @org.junit.jupiter.api.Test
@@ -60,19 +73,28 @@ class AssignmentTest {
 
     @org.junit.jupiter.api.Test
     void getSolutionList() {
-        Assertions.assertEquals(0, assignmentForTest.getSolutionList().size());
+        Assertions.assertEquals(
+            0,
+            assignmentForTest.getSolutionList().size()
+        );
     }
 
     @org.junit.jupiter.api.Test
     void getSolution() {
         solutionForTest.theAuthor = "Manan Patel";
         assignmentForTest.addSolution(solutionForTest);
-        Assertions.assertEquals("Manan Patel", assignmentForTest.getSolution("Manan Patel").theAuthor);
+        Assertions.assertEquals(
+            "Manan Patel",
+            assignmentForTest.getSolution("Manan Patel").theAuthor
+        );
     }
 
     @org.junit.jupiter.api.Test
     void getSuggestSolution() {
-        Assertions.assertEquals(assignmentForTest.getSuggestSolution().getClass(), new Solution().getClass());
+        Assertions.assertEquals(
+            assignmentForTest.getSuggestSolution().getClass(),
+            new Solution().getClass()
+        );
     }
 
     @org.junit.jupiter.api.Test
@@ -93,7 +115,10 @@ class AssignmentTest {
         Date due = new Date();
         assignmentForTest.setDueDate(due);
         DateFormat dF = DateFormat.getDateInstance(DateFormat.SHORT);
-        Assertions.assertEquals(dF.format(due), assignmentForTest.getDueDateString());
+        Assertions.assertEquals(
+            dF.format(due),
+            assignmentForTest.getDueDateString()
+        );
     }
 
     @org.junit.jupiter.api.Test

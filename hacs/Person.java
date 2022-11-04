@@ -26,7 +26,9 @@ abstract public class Person {
         courseList = new ClassCourseList();
     }
 
-    abstract public CourseMenu createCourseMenu(Course theCourse, int theLevel);
+    abstract public CourseMenu createCourseMenu(
+        Course theCourse, int theLevel
+    );
 
     public void showAddButton() {
         theCourseMenu.showAddButtons();

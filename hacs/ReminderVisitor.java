@@ -18,7 +18,8 @@ import java.util.Iterator;
 
 /*
  * this class will iterate the course list attatched to on student and in turn
- * iterate the assignments of a course. after Function Visit(CourseList) it will
+ * iterate the assignments of a course.
+ * after Function Visit(CourseList) it will
  * point to the location before the fist class, hasNext will retrun weather
  * there is next item. the next() will return the next Item Assignment;
  */
@@ -43,7 +44,8 @@ public class ReminderVisitor extends NodeVisitor {
     }
 
     public void visitCourse(Course course) {
-        Iterator<Assignment> assignmentList = course.assignmentList.listIterator();
+        Iterator<Assignment> assignmentList;
+        assignmentList = course.assignmentList.listIterator();
         while (assignmentList.hasNext()) {
             Assignment assignment = assignmentList.next();
             assignment.accept(this);
@@ -60,12 +62,22 @@ public class ReminderVisitor extends NodeVisitor {
         if(mReminder != null) { // correcting because of the test case
             if (nDueDate <= (ntoday + 1) && nDueDate >= ntoday) /// upcoming
             {
-                mReminder.listUpcoming.add("today is " + today.toString() + " " + assignment.assignmentName + " Due Date is "
-                        + assignment.getDueDateString());
+                mReminder.listUpcoming.add(
+                    "today is "
+                    + today.toString()
+                    + " "
+                    + assignment.assignmentName
+                    + " Due Date is "
+                    + assignment.getDueDateString()
+                );
             }
             if (nDueDate < ntoday) {
                 // put to the
-                mReminder.listOverdue.add(assignment.assignmentName + " Due Date is " + assignment.getDueDateString());
+                mReminder.listOverdue.add(
+                    assignment.assignmentName
+                    + " Due Date is "
+                    + assignment.getDueDateString()
+                );
             }
         }
 

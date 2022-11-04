@@ -95,8 +95,10 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 	}
 
 	/*
-	 * check if the student has already had a solution or not. if not , create a new
-	 * solution for the student. after showing the solution attatch the soluiton;
+	 * check if the student has already had a solution or not.
+	 * if not , create a new
+	 * solution for the student.
+	 * after showing the solution attatch the soluiton;
 	 */
 	public void showMenu(Assignment assignment, Person thePerson) {
 		theAssignment = assignment;
@@ -112,7 +114,9 @@ public class StudentAssignmentMenu extends AssignmentMenu {
 
 		lAssignmentName.setText(theAssignment.assignmentName);
 		lDueDate.setText(theAssignment.dueDate.toString());
-		lSuggestedSolution.setText(theAssignment.suggestSolution.solutionFileName);
+		lSuggestedSolution.setText(
+			theAssignment.suggestSolution.solutionFileName
+		);
 
 		setVisible(true);
 

@@ -16,7 +16,10 @@ class SolutionTest {
     void testToString() {
         solutionForTest.theAuthor = "Manan Patel";
         solutionForTest.solutionFileName = "First solution";
-        Assertions.assertEquals("Manan Patel  First solution Grade=0  not reported", solutionForTest.toString());
+        Assertions.assertEquals(
+            "Manan Patel  First solution Grade=0  not reported",
+            solutionForTest.toString()
+        );
     }
 
     @Test

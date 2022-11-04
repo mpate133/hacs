@@ -30,7 +30,9 @@ public class SolutionIterator implements Iterator {
     }
 
     public void moveToHead() {
-        /// CurrentSolutionNumber: point to the location before the first element
+        /**CurrentSolutionNumber:
+         * point to the location before the first element
+         */
         currentSolutionNumber = -1;
     }
 
@@ -42,8 +44,6 @@ public class SolutionIterator implements Iterator {
         else {
             return true;
         }
-        // throw new java.lang.UnsupportedOperationException("Method hasNext() not yet
-        // implemented.");
     }
 
     public Object next() {
@@ -54,8 +54,6 @@ public class SolutionIterator implements Iterator {
         } else {
             return null;
         }
-        // throw new java.lang.UnsupportedOperationException("Method next() not yet
-        // implemented.");
     }
 
     /// get the next Solution that fits the Username;
@@ -72,10 +70,7 @@ public class SolutionIterator implements Iterator {
     }
 
     public void remove() {
-        /** @todo: Implement this java.util.Iterator method */
         solutionlist.remove(currentSolutionNumber);
-        // throw new java.lang.UnsupportedOperationException("Method remove() not yet
-        // implemented.");
     }
 
 }

@@ -23,14 +23,16 @@ public class ClassCourseList extends ArrayList<Course> {
         try {
             BufferedReader file;
             String stringCourseName = null;
-            file = new BufferedReader(new FileReader("./TextFiles/CourseInfo.txt"));
+            file = new BufferedReader(
+                        new FileReader("./TextFiles/CourseInfo.txt")
+                    );
             while ((stringCourseName = file.readLine()) != null) {
                 Course theCourse = new Course(stringCourseName, 0);
                 // theCourse.CourseName= strCourseName;
                 add(theCourse);
             }
         } catch (Exception ee) {
-            
+
         }
     }
 

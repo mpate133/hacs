@@ -38,7 +38,10 @@ class FacadeTest {
     void createUser() {
         userinfoitemfortest.userType = 0;
         facadeForTest.createUser(userinfoitemfortest);
-        Assertions.assertEquals(true, facadeForTest.thePerson instanceof Student);
+        Assertions.assertEquals(
+            true,
+            facadeForTest.thePerson instanceof Student
+        );
 
     }
 

@@ -96,23 +96,29 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
         // Solution theSolution; ** not in use
         tbAssignmentName.setText(theAssignment.assignmentName);
 
-        DateFormat theDateFormat = DateFormat.getDateInstance(DateFormat.SHORT);
+        DateFormat theDateFormat;
+        theDateFormat = DateFormat.getDateInstance(DateFormat.SHORT);
         tbDueDate.setText(theDateFormat.format(theAssignment.dueDate));
-        tbSuggestedSolution.setText(theAssignment.suggestSolution.solutionFileName);
+        tbSuggestedSolution.setText(
+            theAssignment.suggestSolution.solutionFileName
+        );
         refreshSolutionList();
         setVisible(true);
     }
 
     void buttonCloseActionPerformed(ActionEvent e) {
         theAssignment.assignmentName = tbAssignmentName.getText();
-        DateFormat tempDateFormat = DateFormat.getDateInstance(DateFormat.SHORT);
+        DateFormat tempDateFormat;
+        tempDateFormat = DateFormat.getDateInstance(DateFormat.SHORT);
         try {
             theAssignment.dueDate = tempDateFormat.parse(tbDueDate.getText());
         } catch (Exception ee) {
             System.out.println(ee);
         }
 
-        theAssignment.suggestSolution.solutionFileName = tbSuggestedSolution.getText();
+        theAssignment.suggestSolution.solutionFileName
+             = tbSuggestedSolution.getText();
+
         setVisible(false);
     }
 
@@ -127,7 +133,9 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
     }
 
     void buttonReportActionPerformed(ActionEvent e) {
-        SolutionIterator iter = new SolutionIterator(theAssignment.theSolutionList);
+        SolutionIterator iter = new SolutionIterator(
+                                    theAssignment.theSolutionList
+                                );
         while (iter.hasNext()) {
             Solution aSolution = (Solution) iter.next();
             aSolution.setReported(true);
@@ -137,7 +145,9 @@ public class InstructorAssignmentMenu extends AssignmentMenu {
 
     private void refreshSolutionList() {
         combSolutionList.removeAllItems();
-        SolutionIterator SolIter = new SolutionIterator(theAssignment.theSolutionList);
+        SolutionIterator SolIter = new SolutionIterator(
+                                        theAssignment.theSolutionList
+                                    );
         while (SolIter.hasNext()) {
             theSolution = (Solution) SolIter.next();
             combSolutionList.addItem(theSolution);

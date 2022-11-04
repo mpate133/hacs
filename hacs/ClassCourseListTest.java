@@ -33,6 +33,9 @@ class ClassCourseListTest {
     void findCourseByCourseName() {
         String course = "SER501";
         classCourseList.initializeFromFile("./TextFiles/CourseInfo.txt");
-        Assertions.assertEquals(course, classCourseList.findCourseByCourseName((course)).toString());
+        Assertions.assertEquals(
+            course,
+            classCourseList.findCourseByCourseName((course)).toString()
+        );
     }
 }

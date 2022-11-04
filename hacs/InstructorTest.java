@@ -14,7 +14,10 @@ class InstructorTest {
 
     Course courseForTest = new Course("SER501", 1);
     Instructor instructorForTest = new Instructor();
-    CourseMenu courseMenuForTest = instructorForTest.createCourseMenu(courseForTest, 1);
+    CourseMenu courseMenuForTest = instructorForTest.createCourseMenu(
+                                        courseForTest,
+                                1
+                                    );
 
 
     @BeforeEach
@@ -27,9 +30,19 @@ class InstructorTest {
 
     @Test
     void createCourseMenu() {
-        Assertions.assertEquals(true, courseMenuForTest instanceof LowLevelCourseMenu);
-        courseMenuForTest = instructorForTest.createCourseMenu(new Course("SER515", 0), 0);
-        Assertions.assertEquals(true, courseMenuForTest instanceof HighLevelCourseMenu);
+        Assertions.assertEquals(
+            true,
+            courseMenuForTest instanceof LowLevelCourseMenu
+        );
+
+        courseMenuForTest = instructorForTest.createCourseMenu(
+                                new Course("SER515", 0),
+                                0
+                            );
+        Assertions.assertEquals(
+            true,
+            courseMenuForTest instanceof HighLevelCourseMenu
+        );
     }
 
     @Test

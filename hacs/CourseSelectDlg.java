@@ -73,8 +73,10 @@ public class CourseSelectDlg extends JDialog {
 	}
 
 	/*
-	 * show the theCourseList in a combox Show the Course type selection button
-	 * return the pointer pointing to the Course object return the Course Type
+	 * show the theCourseList in a combox Show
+	 * the Course type selection button
+	 * return the pointer pointing to the Course object
+	 * return the Course Type
 	 */
 
 	public Course showDlg(ClassCourseList courseList) {

@@ -94,7 +94,8 @@ abstract public class CourseMenu extends JDialog {
     }
 
     void assignmentViewButtonActionPerformed(ActionEvent event) {
-        Assignment theAssignment = (Assignment) assignmentCombox.getSelectedItem();
+        Assignment theAssignment;
+        theAssignment = (Assignment) assignmentCombox.getSelectedItem();
         Hacs.theFacade.viewAssignment(theAssignment);
     }
 

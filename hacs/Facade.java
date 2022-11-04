@@ -36,10 +36,13 @@ public class Facade {
 	}
 
 	/*
-	 * When click the add button of the CourseMenu , call this function this
-	 * function will new an assignment fill the required infomation this function
-	 * will call InstructorAssignmentMenu or StudentAssignmentMenu according to the
-	 * type of the user it will not update the course menu. the coursemenu need to
+	 * When click the add button of the CourseMenu ,
+	 *  call this function this
+	 * function will new an assignment fill the required infomation
+	 * this function will call InstructorAssignmentMenu
+	 * or StudentAssignmentMenu according to the
+	 * type of the user it will not update the course menu.
+	 * The coursemenu need to
 	 * refreshed outside the function
 	 */
 
@@ -56,11 +59,14 @@ public class Facade {
 	}
 
 	/*
-	 * When click the view button of the CourseMenu , call this function and pass
-	 * the pointer of the Assignment and the person pointer to this function this
-	 * function will new an assignment fill the required infomation this function
-	 * will call InstructorAssignmentMenu or StudentAssignmentMenu according to the
-	 * type of the user
+	 * When click the view button of the CourseMenu ,
+	 * call this function and pass
+	 * the pointer of the Assignment and
+	 * the person pointer to this function this
+	 * function will new an assignment fill
+	 * the required infomation this function
+	 * will call InstructorAssignmentMenu or
+	 * StudentAssignmentMenu according to the type of the user
 	 */
 	void viewAssignment(Assignment theAssignment) {
 		AssignmentMenu theAssignmentMenu;
@@ -74,7 +80,8 @@ public class Facade {
 	}
 
 	/*
-	 * This function will grade the give Solution: theSolution this function calls
+	 * This function will grade the give Solution:
+	 * theSolution this function calls
 	 */
 
 	void gradeSolution(Solution theSolution) {
@@ -83,7 +90,8 @@ public class Facade {
 	}
 
 	void reportSolutions(Assignment theAssignment) {
-		SolutionIterator theSolutionIterator = theAssignment.getSolutionIterator();
+		SolutionIterator theSolutionIterator;
+		theSolutionIterator = theAssignment.getSolutionIterator();
 		Solution theSolution = (Solution) theSolutionIterator.next();
 		while (theSolution != null) {
 			theSolution.setReported(true);
@@ -120,28 +128,35 @@ public class Facade {
 	/*
 	 * call this function after create user, create courselist read the
 	 * UserCourse.txt file match the coursename with theCouresList attach the
-	 * Matched course object to the new create user Facade.thePerson.CourseList
+	 * Matched course object to the new create user
+	 * Facade.thePerson.CourseList
 	 */
 	void attachCourseToUser() {
 		BufferedReader file;
 		try {
-			file = new BufferedReader(new FileReader("./TextFiles/UserCourse.txt"));
+			file = new BufferedReader(
+						new FileReader("./TextFiles/UserCourse.txt")
+					);
 			String aLine, stringUserName, stringCourseName;
 			while ((aLine = file.readLine()) != null) // not the EOF
 			{
 				stringUserName = getUserName(aLine);
 				stringCourseName = getCourseName(aLine);
-				if (stringUserName.compareTo(thePerson.userName) == 0) /// the UserName matches
+				/// the UserName matches
+				if (stringUserName.compareTo(thePerson.userName) == 0)
 				{
-					theSelecteCourse = findCourseByCourseName(stringCourseName);
-					if (theSelecteCourse != null) /// Find the Course in the CourseList--->attach
+					theSelecteCourse = findCourseByCourseName(
+											stringCourseName
+										);
+					/// Find the Course in the CourseList--->attach
+					if (theSelecteCourse != null)
 					{
 						thePerson.addCourse(theSelecteCourse);
 					}
 				}
 			}
 		} catch (Exception ee) {
-
+			System.out.println(ee);
 		}
 	}
 
@@ -162,7 +177,8 @@ public class Facade {
 	}
 
 	/*
-	 * show the course selection dlg, show the course attatched to theperson and
+	 * show the course selection dlg,
+	 * show the course attatched to theperson and
 	 * return the selected course and assign the course to the class member
 	 * theSelecteCourse, the Course Level to CourseLevel CourseLeve=0 High,
 	 * CourseLeve=1 Low
@@ -176,9 +192,10 @@ public class Facade {
 	}
 
 	/*
-	 * call the thePerson.CreateCourseMenu according to the really object(student or
-	 * instructor) and the nCourseLevel it will call different menu creater and show
-	 * the menu;
+	 * call the thePerson.CreateCourseMenu
+	 * according to the really object(student or
+	 * instructor) and the nCourseLevel it will call
+	 * different menu creater and show the menu;
 	 */
 
 	public boolean courseOperation() {
@@ -187,8 +204,10 @@ public class Facade {
 	}
 
 	/*
-	 * find the course in theCourseList that matches strCourseName 1 create a
-	 * CourseIterator for the List 2 Find the Course with the Iterator return the
+	 * find the course in theCourseList that matches
+	 * strCourseName 1 create a
+	 * CourseIterator for the List 2 Find the Course with
+	 * the Iterator return the
 	 * pointer of the Course if not fine, return null;
 	 */
 	private Course findCourseByCourseName(String stringCourseName) {

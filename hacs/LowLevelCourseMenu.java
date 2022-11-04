@@ -26,11 +26,13 @@ public class LowLevelCourseMenu extends CourseMenu {
     }
 
     void showAddButtons() {
-        assignmentAddButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                assignmentAddButtonActionPerformed(e);
+        assignmentAddButton.addActionListener(
+            new java.awt.event.ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    assignmentAddButtonActionPerformed(e);
+                }
             }
-        });
+        );
         assignmentAddButton.setText("Add");
         assignmentAddButton.setBounds(new Rectangle(389, 54, 79, 29));
         optionAddButton.setText("Add");
@@ -59,11 +61,13 @@ public class LowLevelCourseMenu extends CourseMenu {
     void showViewButtons() {
         assignmentViewButton.setText("View");
         assignmentViewButton.setBounds(new Rectangle(290, 54, 79, 29));
-        assignmentViewButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                assignmentViewButtonActionPerformed(e);
+        assignmentViewButton.addActionListener(
+            new java.awt.event.ActionListener() {
+                public void actionPerformed(ActionEvent e) {
+                    assignmentViewButtonActionPerformed(e);
+                }
             }
-        });
+        );
         optionViewButton.setText("View");
         optionViewButton.setBounds(new Rectangle(290, 124, 79, 29));
         this.getContentPane().add(assignmentViewButton, null);
