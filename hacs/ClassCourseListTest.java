@@ -25,14 +25,14 @@ class ClassCourseListTest {
 
     @Test
     void initializeFromFile() {
-        classCourseList.initializeFromFile("./TextFiles/CourseInfo.txt");
+        classCourseList.initializeFromFile("CourseInfo.txt");
         Assertions.assertEquals(3,classCourseList.size());
     }
 
     @Test
     void findCourseByCourseName() {
         String course = "SER501";
-        classCourseList.initializeFromFile("./TextFiles/CourseInfo.txt");
+        classCourseList.initializeFromFile("CourseInfo.txt");
         Assertions.assertEquals(
             course,
             classCourseList.findCourseByCourseName((course)).toString()

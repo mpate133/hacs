@@ -122,7 +122,7 @@ public class Facade {
 	 */
 	void createCourseList() {
 		theCourseList = new ClassCourseList();
-		theCourseList.initializeFromFile("./TextFiles/CourseInfo.txt");
+		theCourseList.initializeFromFile("CourseInfo.txt");
 	}
 
 	/*
@@ -135,7 +135,7 @@ public class Facade {
 		BufferedReader file;
 		try {
 			file = new BufferedReader(
-						new FileReader("./TextFiles/UserCourse.txt")
+						new FileReader("UserCourse.txt")
 					);
 			String aLine, stringUserName, stringCourseName;
 			while ((aLine = file.readLine()) != null) // not the EOF

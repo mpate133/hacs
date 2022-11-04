@@ -90,13 +90,13 @@ public class Login extends JDialog {
         BufferedReader file;
         mBExit = false;
         System.out.println("login clicked");
-        File fl = new File("./TextFiles/StudentInfo.txt");
+        File fl = new File("StudentInfo.txt");
         if (studentRadio.isSelected() == true)//// student
         {
             userType = 0; /// 0 for student
         } else// instructor
         {
-            fl = new File("./TextFiles/InstructorInfo.txt");
+            fl = new File("InstructorInfo.txt");
             userType = 1; // 1 for instructor
         }
         file = new BufferedReader(new FileReader(fl));
